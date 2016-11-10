@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const Els = function({number, ul, li, handler}){
+export const Els = function({number, ul, li1, li2, handler}){
 
-  const boxes = items(number, li, handler);
+  const boxes = items(number, li1, li2, handler);
   return (
     <ul style={ul}>
       {boxes}
@@ -11,11 +11,11 @@ export const Els = function({number, ul, li, handler}){
 }
 
 
-function items(num, style, handler){
+function items(num, style1, style2, handler){
   let i = 1;
   let arr = [];
   while ( i <= num) {
-    arr.push(<li key={i.toString()} style={style} onClick={handler}>{i}</li>);
+    arr.push(<li key={i.toString()} style={ i % 2 === 0 ? style1: style2} onClick={handler}>{i}</li>);
     i++;
   }
   return arr;

@@ -1,11 +1,11 @@
 import React from 'react';
-import {box, box2, list} from './style.jsx';
+import {box, box2, box3, list} from './style.jsx';
 import {Els} from './components.jsx';
+import ReactDOM from 'react-dom';
 
 class App extends React.Component {
   constructor() {
     super();
-
     this.state = {count: 0}
     this.stateHandler = this.stateHandler.bind(this);
     this.clearState = this.clearState.bind(this);
@@ -23,24 +23,27 @@ class App extends React.Component {
     clearState() {
       let item = this.state.count;
       item > 0 && item--;
-      this.setState({count: item});
+      this.setState({count: 0});
     }
 
     remove(e) {
-      console.log(e.target);
-      e.target.remove();
+
+      let item = this.state.count;
+      item > 0 && item--;
+      this.setState({count: item});
+      // ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(e.target).remove())
     }
 
     render() {
-
-      // function
+      const {count} = this.state;
 
       return (
-        <div>
+        <div style={{margin:20}}>
           <button onClick = {this.stateHandler}>Add</button>
-          {this.state.count > 0 && <button onClick = {this.clearState}>Remove</button>}
-          <div style={box}>State: {this.state.count}</div>
-          <Els number={this.state.count} ul={list} li={box2} handler={this.remove}/>
+          {count > 0 && <button  onClick = {this.remove}>Remove</button>}
+          {count > 0 && <button  onClick = {this.clearState}>Clear</button>}
+          <div style={box}> State: {count}</div>
+          <Els number={count} ul={list} li1={box2} li2={box3} handler={this.remove}/>
         </div>
       );
     }
