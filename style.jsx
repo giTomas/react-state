@@ -15,8 +15,8 @@ export const box = {
   };
 
 export const box2 = {
-    width: 100,
-    height: 100,
+    width: 'calc(10% - 20px)',
+    height: '15vh',
     backgroundColor: 'rgb(156, 28, 28)',
     display: 'flex',
     justifyContent: 'center',
@@ -28,8 +28,8 @@ export const box2 = {
   };
 
 export const box3 = {
-    width: 100,
-    height: 100,
+    width: 'calc(10% - 20px)',
+    height: '15vh',
     backgroundColor: '#52B7FF',
     display: 'flex',
     justifyContent: 'center',
@@ -43,8 +43,11 @@ export const box3 = {
 export const list = {
     listStyle: 'none',
     display: 'flex',
-    justifyContent: 'center',
+    // justifyContent: 'space-between',
     flexWrap: 'wrap',
-    paddingRight: 10,
-    paddingLeft: 0
+    padding: 0,
+    marginLeft: '-10px',
+    marginRight: '-10px',
+    overflow: 'hidden'
+
  };
