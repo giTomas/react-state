@@ -2,7 +2,7 @@ export const box = {
     // width: 100,
     height: 100,
     // backgroundColor: '#1EA986',
-    backgroundImage: 'linear-gradient(to right, rgb(156, 28, 28), #52B7FF )',
+    backgroundImage: 'linear-gradient(to right, #52B7FF, rgb(156, 28, 28) )',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
