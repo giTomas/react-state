@@ -20,7 +20,8 @@ const config = {
 
 
         query: {
-          presets: ['es2015', 'react']
+          presets: ['es2015', 'react', 'stage-0', 'stage-1', 'stage-3'],
+          plugins: ['transform-decorators-legacy']
         }
       }
     ]
